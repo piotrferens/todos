@@ -23,9 +23,7 @@ export class NavigationContainer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    todos: state.todos
-  };
+  return null;
 }
 
 export const Navigation = connect(mapStateToProps, {
