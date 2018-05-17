@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import { toggleTodo, deleteTodo } from "../actions/actions";
 import { todosSelector } from "../selectors/todosSelector";
 
