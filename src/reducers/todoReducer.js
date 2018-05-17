@@ -7,7 +7,8 @@ import {
   SHOW_ALL,
   SHOW_ACTIVE,
   SHOW_COMPLETED,
-  RESET_TODOS
+  RESET_TODOS,
+  DELETE_TODO
 } from "../actions/actions";
 
 function data(state = [], action) {
@@ -20,6 +21,11 @@ function data(state = [], action) {
           text: action.payload,
           isFinished: false
         }
+      ];
+    case DELETE_TODO:
+      return [
+        ...state.slice(0, action.payload),
+        ...state.slice(action.payload + 1, state.length)
       ];
     case RESET_TODOS:
       return [];

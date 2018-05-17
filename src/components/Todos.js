@@ -1,21 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleTodo } from "../actions/actions";
+import { toggleTodo, deleteTodo } from "../actions/actions";
 import { todosSelector } from "../selectors/todosSelector";
 
 export class TodosContainer extends React.Component {
   render() {
     return (
       <ol>
-        {this.props.todos.map(todo => (
+        {this.props.todos.map((todo, index) => (
           <li
             key={todo.id}
-            onClick={() => this.props.toggleTodo(todo.id)}
             style={{
               textDecoration: todo.isFinished ? "line-through" : "none"
             }}
           >
-            {todo.text}
+            <span onClick={() => this.props.toggleTodo(todo.id)}>
+              {todo.text}{" "}
+            </span>
+            <button onClick={() => this.props.deleteTodo(index)}>delete</button>
           </li>
         ))}
       </ol>
@@ -30,5 +32,6 @@ function mapStateToProps(state) {
 }
 
 export const Todos = connect(mapStateToProps, {
+  deleteTodo,
   toggleTodo
 })(TodosContainer);

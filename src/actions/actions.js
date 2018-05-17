@@ -13,6 +13,12 @@ export const addTodo = payload => ({
   payload
 });
 
+export const DELETE_TODO = "DELETE_TODO";
+export const deleteTodo = payload => ({
+  type: DELETE_TODO,
+  payload
+});
+
 export const RESET_TODOS = "RESET_TODOS";
 export const resetTodos = () => ({
   type: RESET_TODOS
