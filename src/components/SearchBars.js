@@ -16,6 +16,7 @@ class SearchBarContainer extends React.Component {
   render() {
     const { onChange, onKeyPress } = this;
     const { value, addTodo } = this.props;
+
     const isEmpty = value.trim().length ? () => addTodo(value) : null;
     return (
       <div>

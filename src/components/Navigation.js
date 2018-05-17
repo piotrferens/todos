@@ -8,18 +8,16 @@ import {
   resetTodos
 } from "../actions/actions";
 
-export class NavigationContainer extends React.Component {
-  render() {
-    const { showAll, showActive, showCompleted, resetTodos } = this.props;
-    return (
-      <div>
-        <button onClick={showAll}>All todos</button>
-        <button onClick={showActive}> Active </button>
-        <button onClick={showCompleted}> Completed </button>
-        <button onClick={resetTodos}>reset</button>
-      </div>
-    );
-  }
+export function NavigationContainer(props) {
+  const { showAll, showActive, showCompleted, resetTodos } = props;
+  return (
+    <div>
+      <button onClick={showAll}>All todos</button>
+      <button onClick={showActive}> Active </button>
+      <button onClick={showCompleted}> Completed </button>
+      <button onClick={resetTodos}>reset</button>
+    </div>
+  );
 }
 
 export const Navigation = connect(null, {
