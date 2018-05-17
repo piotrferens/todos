@@ -1,4 +1,4 @@
-let nextTodoId = 0;
+const uuidv4 = require("uuid/v4");
 
 export const SET_TEXT = "SET_TEXT";
 export const setText = payload => ({
@@ -9,7 +9,7 @@ export const setText = payload => ({
 export const ADD_TODO = "ADD_TODO";
 export const addTodo = payload => ({
   type: ADD_TODO,
-  id: nextTodoId++,
+  id: uuidv4(),
   payload
 });
 

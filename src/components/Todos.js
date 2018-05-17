@@ -7,7 +7,7 @@ export class TodosContainer extends React.Component {
   render() {
     return (
       <ol>
-        {this.props.todos.map((todo, index) => (
+        {this.props.todos.map(todo => (
           <li
             key={todo.id}
             style={{
@@ -17,7 +17,9 @@ export class TodosContainer extends React.Component {
             <span onClick={() => this.props.toggleTodo(todo.id)}>
               {todo.text}{" "}
             </span>
-            <button onClick={() => this.props.deleteTodo(index)}>delete</button>
+            <button onClick={() => this.props.deleteTodo(todo.id)}>
+              delete
+            </button>
           </li>
         ))}
       </ol>

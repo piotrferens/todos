@@ -23,10 +23,7 @@ function data(state = [], action) {
         }
       ];
     case DELETE_TODO:
-      return [
-        ...state.slice(0, action.payload),
-        ...state.slice(action.payload + 1, state.length)
-      ];
+      return state.filter(todo => todo.id !== action.payload);
     case RESET_TODOS:
       return [];
     case TOGGLE_TODO:
