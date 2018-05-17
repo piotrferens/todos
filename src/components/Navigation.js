@@ -13,17 +13,17 @@ export class NavigationContainer extends React.Component {
     const { showAll, showActive, showCompleted, resetTodos } = this.props;
     return (
       <div>
-        <button onClick={() => showAll()}>All todos</button>{" "}
-        <button onClick={() => showActive()}> Active </button>{" "}
+        <button onClick={() => showAll()}>All todos</button>
+        <button onClick={() => showActive()}> Active </button>
         <button onClick={() => showCompleted()}> Completed </button>
-        <button onClick={() => resetTodos()}>reset</button>{" "}
+        <button onClick={() => resetTodos()}>reset</button>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return null;
+  return {};
 }
 
 export const Navigation = connect(mapStateToProps, {
