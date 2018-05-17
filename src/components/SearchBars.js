@@ -9,15 +9,13 @@ class SearchBarContainer extends React.Component {
   };
 
   onKeyPress = event => {
-    if (event.charCode === 13 && event.target.value.replace(/\s+/g, "")) {
+    if (event.charCode === 13 && event.target.value.trim()) {
       this.props.addTodo(event.target.value);
     }
   };
   render() {
     const { value, addTodo } = this.props;
-    const isEmpty = value.replace(/\s+/g, "").length
-      ? () => addTodo(value)
-      : null;
+    const isEmpty = value.trim().length ? () => addTodo(value) : null;
     return (
       <div>
         <input
