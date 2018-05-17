@@ -4,11 +4,11 @@ export const todosSelector = createSelector(
   state => state.todos,
   todos => {
     switch (todos.visibilityFilter) {
-      case "All":
+      case "all":
         return todos.data;
-      case "Active":
+      case "active":
         return todos.data.filter(t => !t.isFinished);
-      case "Completed":
+      case "completed":
         return todos.data.filter(t => t.isFinished);
       default:
         return todos.data;

@@ -5,21 +5,18 @@ import { todosSelector } from "../selectors/todosSelector";
 
 export class TodosContainer extends React.Component {
   render() {
+    const { todos, toggleTodo, deleteTodo } = this.props;
     return (
       <ol>
-        {this.props.todos.map(todo => (
+        {todos.map(todo => (
           <li
             key={todo.id}
             style={{
               textDecoration: todo.isFinished ? "line-through" : "none"
             }}
           >
-            <span onClick={() => this.props.toggleTodo(todo.id)}>
-              {todo.text}{" "}
-            </span>
-            <button onClick={() => this.props.deleteTodo(todo.id)}>
-              delete
-            </button>
+            <span onClick={() => toggleTodo(todo.id)}>{todo.text} </span>
+            <button onClick={() => deleteTodo(todo.id)}>delete</button>
           </li>
         ))}
       </ol>

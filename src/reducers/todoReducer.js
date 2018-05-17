@@ -52,14 +52,14 @@ function value(state = "", action) {
   }
 }
 
-function visibilityFilter(state = "All", action) {
+function visibilityFilter(state = "all", action) {
   switch (action.type) {
     case SHOW_ALL:
-      return "All";
+      return "all";
     case SHOW_ACTIVE:
-      return "Active";
+      return "active";
     case SHOW_COMPLETED:
-      return "Completed";
+      return "completed";
     default:
       return state;
   }
